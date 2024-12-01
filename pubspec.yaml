@@ -28,4 +28,5 @@ dev_dependencies:
 
 flutter:
   assets:
-    - assets/
+    - assets/thumbs-up.svg
+    - assets/thumbs-down.svg

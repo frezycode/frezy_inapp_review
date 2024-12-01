@@ -76,7 +76,7 @@ class RatingSelector extends StatelessWidget {
               backgroundColor: CutyColors.alert.withOpacity(0.2),
               boxShadow: const [],
               icon: const BaseSvg(
-                path: 'assets/thumbs-down.svg',
+                path: 'packages/frezy_inapp_review/assets/thumbs-down.svg',
                 height: 40,
                 color: CutyColors.alert,
               ),
@@ -88,7 +88,7 @@ class RatingSelector extends StatelessWidget {
               backgroundColor: CutyColors.success3.withOpacity(0.2),
               boxShadow: const [],
               icon: const BaseSvg(
-                path: 'assets/thumbs-up.svg',
+                path: 'packages/frezy_inapp_review/assets/thumbs-up.svg',
                 height: 40,
                 color: CutyColors.success3,
               ),
