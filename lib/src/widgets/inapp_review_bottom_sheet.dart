@@ -58,7 +58,7 @@ class _InAppReviewBottomSheetState extends State<InAppReviewBottomSheet> {
         children: [
           BottomSheetHeader(
             trailing: IconButton(
-              onPressed: _onCancel,
+              onPressed: _cancelAndClose,
               icon: Icon(Icons.close, color: theme.hintColor),
             ),
           ),
@@ -67,7 +67,7 @@ class _InAppReviewBottomSheetState extends State<InAppReviewBottomSheet> {
             subtitle: widget.subtitle,
             rateLaterTitle: widget.rateLaterTitle,
             onRatingChange: _onRateSelected,
-            onRateLaterTap: _onCancel,
+            onRateLaterTap: _cancelAndClose,
           )
         ],
       ),
@@ -80,6 +80,11 @@ class _InAppReviewBottomSheetState extends State<InAppReviewBottomSheet> {
       _onCancel();
     }
     super.dispose();
+  }
+
+  void _cancelAndClose() {
+    _onCancel();
+    Navigator.of(context).pop();
   }
 
   void _onCancel() {

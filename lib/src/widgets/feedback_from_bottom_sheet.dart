@@ -64,7 +64,7 @@ class _FeedbackFormBottomSheetState extends State<FeedbackFormBottomSheet> {
   }
 
   void _onCancel(BuildContext context, {bool closePage = true}) {
-    _reviewCompleted(InappReviewStatus.canceled);
+    widget.onCompleted(InappReviewStatus.canceled, null);
     if (closePage) Navigator.pop(context);
   }
 
