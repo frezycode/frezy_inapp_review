@@ -104,7 +104,7 @@ class RatingSelector extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: SizedBox(
             width: double.infinity,
-            height: 30,
+            height: 36,
             child: TextButton(
               onPressed: onRateLaterTap,
               child: Text(

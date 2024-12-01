@@ -99,6 +99,7 @@ class _InAppReviewBottomSheetState extends State<InAppReviewBottomSheet> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      backgroundColor: Colors.transparent,
       builder: (context) => FeedbackFormBottomSheet(
         locale: widget.feedbackFormLocale,
         onCompleted: widget.onNegativeCompleted,
