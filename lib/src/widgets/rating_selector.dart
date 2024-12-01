@@ -1,5 +1,6 @@
-import 'package:cuty_ui_core/cuty_ui_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:frezy_inapp_review/src/widgets/external/external.dart';
 
 class RatingSelector extends StatelessWidget {
   const RatingSelector({
@@ -20,6 +21,8 @@ class RatingSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    const success = Color(0xFF2EB648);
+    const alert = Color(0xFFFF3333);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
@@ -73,24 +76,24 @@ class RatingSelector extends StatelessWidget {
           children: [
             CircleButton(
               size: 80,
-              backgroundColor: CutyColors.alert.withOpacity(0.2),
+              backgroundColor: alert.withOpacity(0.2),
               boxShadow: const [],
-              icon: const BaseSvg(
-                path: 'packages/frezy_inapp_review/assets/thumbs-down.svg',
+              icon: SvgPicture.asset(
+                'packages/frezy_inapp_review/assets/thumbs-down.svg',
                 height: 40,
-                color: CutyColors.alert,
+                color: alert,
               ),
               onTap: () => onRatingChange(false),
             ),
             const SizedBox(width: 40),
             CircleButton(
               size: 80,
-              backgroundColor: CutyColors.success3.withOpacity(0.2),
+              backgroundColor: success.withOpacity(0.2),
               boxShadow: const [],
-              icon: const BaseSvg(
-                path: 'packages/frezy_inapp_review/assets/thumbs-up.svg',
+              icon: SvgPicture.asset(
+                'packages/frezy_inapp_review/assets/thumbs-up.svg',
                 height: 40,
-                color: CutyColors.success3,
+                color: success,
               ),
               onTap: () => onRatingChange(true),
             ),

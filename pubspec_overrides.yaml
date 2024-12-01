@@ -1,5 +1,0 @@
-dependency_overrides:
-  cuty_utils:
-    path: ../cuty_utils
-  cuty_ui_core:
-    path: ../cuty_ui_core

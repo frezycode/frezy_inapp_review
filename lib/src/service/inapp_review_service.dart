@@ -1,6 +1,6 @@
-import 'package:cuty_utils/cuty_utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:in_app_review/in_app_review.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InappReviewService {
   InappReviewService({
@@ -14,8 +14,10 @@ class InappReviewService {
   Future<void> startInAppReview() async {
     if ([TargetPlatform.iOS, TargetPlatform.macOS]
         .contains(defaultTargetPlatform)) {
-      UrlLauncherManager.launchURL(
-        'itms-apps://itunes.apple.com/app/id$appStoreId?action=write-review&mt=8',
+      _launchUrl(
+        Uri.parse(
+          'itms-apps://itunes.apple.com/app/id$appStoreId?action=write-review&mt=8',
+        ),
       );
       return;
     }
@@ -32,8 +34,17 @@ class InappReviewService {
   }
 
   void _openPlaymarketReview() {
-    UrlLauncherManager.launchURL(
-      'https://play.google.com/store/apps/details?id=$androidPackageName&showAllReviews=true',
+    _launchUrl(
+      Uri.parse(
+        'https://play.google.com/store/apps/details?id=$androidPackageName&showAllReviews=true',
+      ),
     );
+  }
+
+  Future<void> _launchUrl(Uri uri) async {
+    final canLaunch = await canLaunchUrl(uri);
+    if (canLaunch) {
+      await launchUrl(uri, mode: LaunchMode.platformDefault);
+    }
   }
 }

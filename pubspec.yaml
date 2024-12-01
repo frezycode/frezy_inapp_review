@@ -10,15 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cuty_ui_core:
-    git:
-      url: https://github.com/cuty-pro/cuty_flutter_ui_core
-      ref: 2.2.105
-  cuty_utils:
-    git:
-      url: https://github.com/cuty-pro/cuty_flutter_utils
-      ref: 2.2.105
+  flutter_svg: ^2.0.16
   in_app_review: ^2.0.10
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:

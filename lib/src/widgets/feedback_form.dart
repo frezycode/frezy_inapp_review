@@ -1,6 +1,6 @@
-import 'package:cuty_ui_core/cuty_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:frezy_inapp_review/src/models/models.dart';
+import 'package:frezy_inapp_review/src/widgets/external/external.dart';
 
 class FeedbackForm extends StatefulWidget {
   const FeedbackForm({

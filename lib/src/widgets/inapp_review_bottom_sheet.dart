@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:cuty_ui_core/cuty_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:frezy_inapp_review/frezy_inapp_review.dart';
 import 'package:frezy_inapp_review/src/service/inapp_review_service.dart';
+import 'package:frezy_inapp_review/src/widgets/external/external.dart';
 import 'package:frezy_inapp_review/src/widgets/rating_selector.dart';
 
 import 'feedback_from_bottom_sheet.dart';
@@ -96,7 +96,8 @@ class _InAppReviewBottomSheetState extends State<InAppReviewBottomSheet> {
       return;
     }
     navigator.pop();
-    BottomSheetManager.of(context).show(
+    showModalBottomSheet(
+      context: context,
       isScrollControlled: true,
       builder: (context) => FeedbackFormBottomSheet(
         locale: widget.feedbackFormLocale,
