@@ -1,0 +1,31 @@
+name: frezy_inapp_review
+description: "A new Flutter package project."
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.5.4
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cuty_ui_core:
+    git:
+      url: https://github.com/cuty-pro/cuty_flutter_ui_core
+      ref: 2.2.105
+  cuty_utils:
+    git:
+      url: https://github.com/cuty-pro/cuty_flutter_utils
+      ref: 2.2.105
+  in_app_review: ^2.0.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+
+flutter:
+  assets:
+    - assets/
