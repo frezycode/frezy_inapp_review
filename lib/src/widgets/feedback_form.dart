@@ -49,6 +49,8 @@ class _FeedbackFormState extends State<FeedbackForm> {
           ),
           Button(
             title: widget.locale.sendButtonTitle,
+            width: double.infinity,
+            titleStyle: const TextStyle(color: Colors.white),
             onPressed: () => widget.onSendTap(_textEditingController.text),
           ),
           SizedBox(
