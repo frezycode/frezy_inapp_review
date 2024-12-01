@@ -48,24 +48,21 @@ class _FeedbackFormBottomSheetState extends State<FeedbackFormBottomSheet> {
   @override
   void dispose() {
     if (!_completedByUser) {
-      _onCancel(context, closePage: false);
+      _onCancel(context);
     }
     super.dispose();
   }
 
   void _onSentTap(BuildContext context, String message) {
     _reviewCompleted(InappReviewStatus.completedNegative, message: message);
-    Navigator.pop(context);
   }
 
   void _onLaterTap(BuildContext context) {
     _reviewCompleted(InappReviewStatus.completedNegative);
-    Navigator.pop(context);
   }
 
-  void _onCancel(BuildContext context, {bool closePage = true}) {
+  void _onCancel(BuildContext context) {
     widget.onCompleted(InappReviewStatus.canceled, null);
-    if (closePage) Navigator.pop(context);
   }
 
   void _reviewCompleted(InappReviewStatus status, {String? message}) {
