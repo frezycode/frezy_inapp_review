@@ -1,22 +1,22 @@
-enum InappReviewStatus {
+enum InAppReviewStatus {
   completedPositive(0),
   completedNegative(1),
   canceled(2);
 
   String get code {
     switch (this) {
-      case InappReviewStatus.completedPositive:
+      case InAppReviewStatus.completedPositive:
         return 'completed_positive';
-      case InappReviewStatus.completedNegative:
+      case InAppReviewStatus.completedNegative:
         return 'completed_negative';
-      case InappReviewStatus.canceled:
+      case InAppReviewStatus.canceled:
         return 'canceled';
     }
   }
 
   final int localId;
-  const InappReviewStatus(this.localId);
+  const InAppReviewStatus(this.localId);
 }
 
-InappReviewStatus inappReviewStatusFromLocalId(int id) =>
-    InappReviewStatus.values.firstWhere((e) => e.localId == id);
+InAppReviewStatus inappReviewStatusFromLocalId(int id) =>
+    InAppReviewStatus.values.firstWhere((e) => e.localId == id);

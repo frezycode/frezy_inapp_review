@@ -34,7 +34,7 @@ class InAppReviewBottomSheet extends StatefulWidget {
 
   final VoidCallback onCanceled;
   final Function(bool isGood) onRateSelected;
-  final Function(InappReviewStatus status, String? message) onNegativeCompleted;
+  final Function(InAppReviewStatus status, String? message) onNegativeCompleted;
 
   @override
   State<InAppReviewBottomSheet> createState() => _InAppReviewBottomSheetState();

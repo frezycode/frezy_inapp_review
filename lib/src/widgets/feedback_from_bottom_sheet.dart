@@ -11,7 +11,7 @@ class FeedbackFormBottomSheet extends StatefulWidget {
   });
 
   final FeedbackFormLocale locale;
-  final Function(InappReviewStatus status, String? message) onCompleted;
+  final Function(InAppReviewStatus status, String? message) onCompleted;
 
   @override
   State<FeedbackFormBottomSheet> createState() =>
@@ -54,21 +54,21 @@ class _FeedbackFormBottomSheetState extends State<FeedbackFormBottomSheet> {
   }
 
   void _onSentTap(BuildContext context, String message) {
-    _reviewCompleted(InappReviewStatus.completedNegative, message: message);
+    _reviewCompleted(InAppReviewStatus.completedNegative, message: message);
     Navigator.pop(context);
   }
 
   void _onLaterTap(BuildContext context) {
-    _reviewCompleted(InappReviewStatus.completedNegative);
+    _reviewCompleted(InAppReviewStatus.completedNegative);
     Navigator.pop(context);
   }
 
   void _onCancel(BuildContext context, {bool closePage = true}) {
-    _reviewCompleted(InappReviewStatus.canceled);
+    _reviewCompleted(InAppReviewStatus.canceled);
     if (closePage) Navigator.pop(context);
   }
 
-  void _reviewCompleted(InappReviewStatus status, {String? message}) {
+  void _reviewCompleted(InAppReviewStatus status, {String? message}) {
     _completedByUser = true;
     widget.onCompleted(status, message);
   }
